@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pvclip"
+version = "0.1.0"
+description = "PV inverter clipping and DC/AC ratio optimisation: how much energy an oversized array loses at the inverter limit, what ratio pays, and how much clipped energy a DC-coupled battery can recover"
+readme = "README.md"
+license = { text = "BSD-3-Clause" }
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+]
+authors = [{ name = "ChenYi-Nnergy" }]
+keywords = ["photovoltaic", "inverter", "clipping", "DC-AC-ratio", "oversizing", "solar"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+plot = ["matplotlib"]
+pvlib = ["pvlib"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
